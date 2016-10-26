@@ -3,6 +3,8 @@ _ = require('underscore')
 Backbone = require('backbone')
 Backbone.$ = $;
 
+dashboard = require('./dashboard')
+
 class MainView extends Backbone.View
 
   el: 'body'
@@ -11,6 +13,6 @@ class MainView extends Backbone.View
     @render()
 
   render: () ->
-    @$el.html '<h4>Finally it works</h4>'
+    @$el.html dashboard name: 'Adam'
 
 module.exports = MainView

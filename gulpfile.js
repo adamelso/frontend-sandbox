@@ -1,17 +1,19 @@
 var gulp        = require('gulp');
+var coffeeify   = require('coffeeify');
 var browserify  = require('browserify');
-var concat      = require('gulp-concat');
 var source      = require('vinyl-source-stream');
+var handlebars  = require('browserify-handlebars');
 
 gulp.task('scripts', function () {
 
     var bundle = browserify({
         entries:    ['./src/index.coffee'],
-        extensions: ['.coffee']
+        extensions: ['.coffee', '.hbs']
     });
 
     return bundle
-        .transform('coffeeify')
+        .transform(coffeeify)
+        .transform(handlebars)
         .bundle()
 
         .pipe(source('bundle.js'))
