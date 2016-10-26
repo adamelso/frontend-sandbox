@@ -5,4 +5,4 @@ Frontend Sandbox
 * Coffeescript
 * Browserify
 * Backbone
-
+* jQuery
