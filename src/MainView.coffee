@@ -7,7 +7,7 @@ dashboard = require('./dashboard')
 
 class MainView extends Backbone.View
 
-  el: 'body'
+  el: '#app'
 
   initialize: () ->
     @render()
